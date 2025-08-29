@@ -10,5 +10,12 @@ export default defineNuxtConfig({
   ui: {
     prefix: 'Nuxt',
     fonts: true
+  },
+  runtimeConfig: {
+    blobToken: process.env.NUXT_BLOB_READ_WRITE_TOKEN,
+    public: {
+      apiBase: '/server/api',
+      blobToken: process.env.NUXT_BLOB_READ_WRITE_TOKEN
+    }
   }
 })

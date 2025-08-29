@@ -9,5 +9,5 @@ const items = ref<NavigationMenuItem[]>([
 ])
 </script>
 <template>
-  <NuxtNavigationMenu :items="items" class="bg-black" />
+  <img src="" alt="">
 </template>

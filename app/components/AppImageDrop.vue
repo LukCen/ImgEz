@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+
 useRuntimeConfig()
 const isUploading = ref(false)
 const isSuccessful = ref(false)
 const downloadLink = ref('')
+const clip = useClipboard()
 const file = ref<File | null>() // image thrown into the FileUpload
 
 async function handleUpload(file: File | null) {
@@ -42,9 +45,11 @@ async function handleUpload(file: File | null) {
       <Icon v-show="isUploading" name="lucide:loader" size="24" class="animate-spin" />
 
     </button>
-    <a target="_blank" :href="downloadLink"
-      class="border-1 border-secondary px-8 py-2 text-secondary hover:bg-secondary hover:text-black active:scale-105 duration-150 cursor-pointer"
-      v-show="isSuccessful" download>Download {{ file?.name }}</a>
+    <button v-if="isSuccessful === true" @click="clip.copy(downloadLink)"
+      class="download-link flex justify-center items-center gap-2 border-2 border-light rounded-sm px-8 py-2 cursor-pointer hover:scale-110">
+      <span>Copy download link to clipboard</span>
+      <Icon name="lucide:copy" size="24" class="flex" />
+    </button>
     <span v-show="isSuccessful === true" class="text-success font-semibold">Upload successful!</span>
   </section>
 </template>

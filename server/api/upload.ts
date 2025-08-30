@@ -23,9 +23,8 @@ export default defineEventHandler(async (event) => {
 
   const blob = await put(filename, file.data, {
     access: "public",
-    token: token,
-    addRandomSuffix: true
+    token: token
   })
 
-  return { url: blob.url }
+  return blob
 })

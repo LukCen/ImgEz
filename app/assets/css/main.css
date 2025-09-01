@@ -5,3 +5,7 @@
 :root {
   font-family: "Open Sans", sans-serif;
 }
+body {
+  max-width: 720px;
+  margin: 0 auto;
+}

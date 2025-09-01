@@ -1,5 +1,5 @@
 <template>
-  <div class=" flex flex-col items-center justify-center gap-4">
+  <div class=" flex flex-col gap-8 items-center justify-center my-4">
     <InfoBox />
     <AppImageDrop />
   </div>

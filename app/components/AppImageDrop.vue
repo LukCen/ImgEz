@@ -54,10 +54,10 @@ function copyToClipboard(e: string) {
 }
 </script>
 <template>
-  <section class="mx-auto flex flex-col gap-5 items-center">
+  <section class="mx-auto flex flex-col gap-5 w-full items-center">
     <NuxtFileUpload :dropzone="true" v-model="file" label="Drop your image here!" accept=".png, .jpg, .jpeg, .svg, .gif"
       description="Accepts SVG, PNG, JPG, GIF. Max 3MB allowed."
-      class="min-h-[400px] min-w-[600px] rounded-sm border-old-neutral-400 border-1" />
+      class="min-h-[400px] min-w-full rounded-sm border-old-neutral-400 border-1" />
     <!-- upload button -->
     <button :disabled="fileTooBig" @click="() => { if (file) { handleUpload(file) } }"
       class="flex justify-center items-center gap-2 border-2 font-semibold border-primary rounded-md px-8 py-2 hover:bg-primary hover:text-black active:scale-105 duration-150 cursor-pointer disabled:pointer-events-none disabled:bg-neutral-600 disabled:border-neutral-600">

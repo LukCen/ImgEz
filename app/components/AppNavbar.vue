@@ -7,3 +7,8 @@ import navLogo from "/assets/imgez_logo.webp"
     <span class="text-3xl">EzImage - upload with no hassle!</span>
   </nav>
 </template>
+<style scoped>
+nav {
+  font-family: 'Joti One', sans-serif;
+}
+</style>
